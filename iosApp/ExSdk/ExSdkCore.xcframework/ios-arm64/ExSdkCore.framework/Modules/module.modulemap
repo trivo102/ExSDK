@@ -1,0 +1,8 @@
+framework module "ExSdkCore" {
+    umbrella header "ExSdkCore.h"
+
+    export *
+    module * { export * }
+
+    use Foundation
+}

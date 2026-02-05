@@ -1,0 +1,1562 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ICSdkEKYCHDSaison
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AVKit
+import Combine
+import Compression
+import CoreFoundation
+import CoreGraphics
+import CoreText
+import Foundation
+@_exported import ICSdkEKYCHDSaison
+import QuartzCore
+import Swift
+import SwiftUI
+import UIKit
+import VideoToolbox
+import Vision
+import _Concurrency
+import _StringProcessing
+import zlib
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class AnimatedSwitch : ICSdkEKYCHDSaison.AnimatedControl {
+  @_Concurrency.MainActor(unsafe) override public init(animation: ICSdkEKYCHDSaison.LottieAnimation?, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) override open func animationDidSet()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  public enum CancelBehavior {
+    case reverse
+    case none
+    public static func == (a: ICSdkEKYCHDSaison.AnimatedSwitch.CancelBehavior, b: ICSdkEKYCHDSaison.AnimatedSwitch.CancelBehavior) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) public var cancelBehavior: ICSdkEKYCHDSaison.AnimatedSwitch.CancelBehavior
+  @_Concurrency.MainActor(unsafe) public var animateUpdateWhenChangingAnimation: Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var accessibilityTraits: UIKit.UIAccessibilityTraits {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public var stateUpdated: ((_ isOn: Swift.Bool) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var isOn: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public func setIsOn(_ isOn: Swift.Bool, animated: Swift.Bool, shouldFireHaptics: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func setProgressForState(fromProgress: ICSdkEKYCHDSaison.AnimationProgressTime, toProgress: ICSdkEKYCHDSaison.AnimationProgressTime, forOnState: Swift.Bool)
+  @objc deinit
+}
+public enum LottiePlaybackMode : Swift.Hashable {
+  case paused(at: ICSdkEKYCHDSaison.LottiePlaybackMode.PausedState)
+  case playing(_: ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode)
+  @available(*, deprecated, renamed: "LottiePlaybackMode.paused(at:)", message: "Will be removed in a future major release.")
+  case progress(_: ICSdkEKYCHDSaison.AnimationProgressTime)
+  @available(*, deprecated, renamed: "LottiePlaybackMode.paused(at:)", message: "Will be removed in a future major release.")
+  case frame(_: ICSdkEKYCHDSaison.AnimationFrameTime)
+  @available(*, deprecated, renamed: "LottiePlaybackMode.paused(at:)", message: "Will be removed in a future major release.")
+  case time(_: Foundation.TimeInterval)
+  @available(*, deprecated, renamed: "LottiePlaybackMode.paused(at:)", message: "Will be removed in a future major release.")
+  case pause
+  @available(*, deprecated, renamed: "LottiePlaybackMode.playing(_:)", message: "Will be removed in a future major release.")
+  case fromProgress(_: ICSdkEKYCHDSaison.AnimationProgressTime?, toProgress: ICSdkEKYCHDSaison.AnimationProgressTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode)
+  @available(*, deprecated, renamed: "LottiePlaybackMode.playing(_:)", message: "Will be removed in a future major release.")
+  case fromFrame(_: ICSdkEKYCHDSaison.AnimationFrameTime?, toFrame: ICSdkEKYCHDSaison.AnimationFrameTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode)
+  @available(*, deprecated, renamed: "LottiePlaybackMode.playing(_:)", message: "Will be removed in a future major release.")
+  case fromMarker(_: Swift.String?, toMarker: Swift.String, playEndMarkerFrame: Swift.Bool = true, loopMode: ICSdkEKYCHDSaison.LottieLoopMode)
+  @available(*, deprecated, renamed: "LottiePlaybackMode.playing(_:)", message: "Will be removed in a future major release.")
+  case marker(_: Swift.String, loopMode: ICSdkEKYCHDSaison.LottieLoopMode)
+  @available(*, deprecated, renamed: "LottiePlaybackMode.playing(_:)", message: "Will be removed in a future major release.")
+  case markers(_: [Swift.String])
+  public enum PausedState : Swift.Hashable {
+    case currentFrame
+    case progress(_: ICSdkEKYCHDSaison.AnimationProgressTime)
+    case frame(_: ICSdkEKYCHDSaison.AnimationFrameTime)
+    case time(_: Foundation.TimeInterval)
+    case marker(_: Swift.String, position: ICSdkEKYCHDSaison.LottieMarkerPosition = .start)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: ICSdkEKYCHDSaison.LottiePlaybackMode.PausedState, b: ICSdkEKYCHDSaison.LottiePlaybackMode.PausedState) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum PlaybackMode : Swift.Hashable {
+    case fromProgress(_: ICSdkEKYCHDSaison.AnimationProgressTime?, toProgress: ICSdkEKYCHDSaison.AnimationProgressTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode)
+    case fromFrame(_: ICSdkEKYCHDSaison.AnimationFrameTime?, toFrame: ICSdkEKYCHDSaison.AnimationFrameTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode)
+    case fromMarker(_: Swift.String?, toMarker: Swift.String, playEndMarkerFrame: Swift.Bool = true, loopMode: ICSdkEKYCHDSaison.LottieLoopMode)
+    case marker(_: Swift.String, loopMode: ICSdkEKYCHDSaison.LottieLoopMode)
+    case markers(_: [Swift.String])
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode, b: ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ICSdkEKYCHDSaison.LottiePlaybackMode, b: ICSdkEKYCHDSaison.LottiePlaybackMode) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ICSdkEKYCHDSaison.LottiePlaybackMode {
+  public static var paused: ICSdkEKYCHDSaison.LottiePlaybackMode {
+    get
+  }
+  @available(*, deprecated, renamed: "LottiePlaybackMode.playing(_:)", message: "Will be removed in a future major release.")
+  public static func toProgress(_ toProgress: ICSdkEKYCHDSaison.AnimationProgressTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode) -> ICSdkEKYCHDSaison.LottiePlaybackMode
+  @available(*, deprecated, renamed: "LottiePlaybackMode.playing(_:)", message: "Will be removed in a future major release.")
+  public static func toFrame(_ toFrame: ICSdkEKYCHDSaison.AnimationFrameTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode) -> ICSdkEKYCHDSaison.LottiePlaybackMode
+  @available(*, deprecated, renamed: "LottiePlaybackMode.playing(_:)", message: "Will be removed in a future major release.")
+  public static func toMarker(_ toMarker: Swift.String, playEndMarkerFrame: Swift.Bool = true, loopMode: ICSdkEKYCHDSaison.LottieLoopMode) -> ICSdkEKYCHDSaison.LottiePlaybackMode
+}
+extension ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode {
+  public static func toProgress(_ toProgress: ICSdkEKYCHDSaison.AnimationProgressTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode) -> ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode
+  public static func toFrame(_ toFrame: ICSdkEKYCHDSaison.AnimationFrameTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode) -> ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode
+  public static func toMarker(_ toMarker: Swift.String, playEndMarkerFrame: Swift.Bool = true, loopMode: ICSdkEKYCHDSaison.LottieLoopMode) -> ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode
+}
+public enum LottieMarkerPosition : Swift.Hashable {
+  case start
+  case end
+  public static func == (a: ICSdkEKYCHDSaison.LottieMarkerPosition, b: ICSdkEKYCHDSaison.LottieMarkerPosition) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum LottieBackgroundBehavior {
+  case stop
+  case pause
+  case pauseAndRestore
+  case forceFinish
+  case continuePlaying
+  public static func `default`(for renderingEngine: ICSdkEKYCHDSaison.RenderingEngine) -> ICSdkEKYCHDSaison.LottieBackgroundBehavior
+  public static func == (a: ICSdkEKYCHDSaison.LottieBackgroundBehavior, b: ICSdkEKYCHDSaison.LottieBackgroundBehavior) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum LottieLoopMode : Swift.Hashable {
+  case playOnce
+  case loop
+  case autoReverse
+  case `repeat`(Swift.Float)
+  case repeatBackwards(Swift.Float)
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ICSdkEKYCHDSaison.LottieLoopMode : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.LottieLoopMode, rhs: ICSdkEKYCHDSaison.LottieLoopMode) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class LottieAnimationView : ICSdkEKYCHDSaison.LottieAnimationViewBase {
+  @_Concurrency.MainActor(unsafe) public init(animation: ICSdkEKYCHDSaison.LottieAnimation?, imageProvider: (any ICSdkEKYCHDSaison.AnimationImageProvider)? = nil, textProvider: any ICSdkEKYCHDSaison.AnimationKeypathTextProvider = DefaultTextProvider(), fontProvider: any ICSdkEKYCHDSaison.AnimationFontProvider = DefaultFontProvider(), configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, logger: ICSdkEKYCHDSaison.LottieLogger = .shared)
+  @_Concurrency.MainActor(unsafe) public init(dotLottie: ICSdkEKYCHDSaison.DotLottieFile?, animationId: Swift.String? = nil, textProvider: any ICSdkEKYCHDSaison.AnimationKeypathTextProvider = DefaultTextProvider(), fontProvider: any ICSdkEKYCHDSaison.AnimationFontProvider = DefaultFontProvider(), configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, logger: ICSdkEKYCHDSaison.LottieLogger = .shared)
+  @_Concurrency.MainActor(unsafe) public init(configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, logger: ICSdkEKYCHDSaison.LottieLogger = .shared)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func play(_ mode: ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) open func play(completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) open func play(fromProgress: ICSdkEKYCHDSaison.AnimationProgressTime? = nil, toProgress: ICSdkEKYCHDSaison.AnimationProgressTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode? = nil, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) open func play(fromFrame: ICSdkEKYCHDSaison.AnimationFrameTime? = nil, toFrame: ICSdkEKYCHDSaison.AnimationFrameTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode? = nil, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) open func play(fromMarker: Swift.String? = nil, toMarker: Swift.String, playEndMarkerFrame: Swift.Bool = true, loopMode: ICSdkEKYCHDSaison.LottieLoopMode? = nil, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) open func play(marker: Swift.String, loopMode: ICSdkEKYCHDSaison.LottieLoopMode? = nil, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) open func play(markers: [Swift.String], completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) open func stop()
+  @_Concurrency.MainActor(unsafe) open func pause()
+  @available(*, deprecated, renamed: "setPlaybackMode(_:completion:)", message: "Will be removed in a future major release.")
+  @_Concurrency.MainActor(unsafe) open func play(_ playbackMode: ICSdkEKYCHDSaison.LottiePlaybackMode, animationCompletionHandler: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) open func setPlaybackMode(_ playbackMode: ICSdkEKYCHDSaison.LottiePlaybackMode, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  @_Concurrency.MainActor(unsafe) public var animateLayoutChangesWithCurrentCoreAnimationContext: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var configuration: ICSdkEKYCHDSaison.LottieConfiguration {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var valueProviders: [ICSdkEKYCHDSaison.AnimationKeypath : any ICSdkEKYCHDSaison.AnyValueProvider] {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var backgroundBehavior: ICSdkEKYCHDSaison.LottieBackgroundBehavior {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var animation: ICSdkEKYCHDSaison.LottieAnimation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var animationLoaded: ((_ animationView: ICSdkEKYCHDSaison.LottieAnimationView, _ animation: ICSdkEKYCHDSaison.LottieAnimation) -> Swift.Void)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var imageProvider: any ICSdkEKYCHDSaison.AnimationImageProvider {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var textProvider: any ICSdkEKYCHDSaison.AnimationKeypathTextProvider {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var fontProvider: any ICSdkEKYCHDSaison.AnimationFontProvider {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var maskAnimationToBounds: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var isAnimationPlaying: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isAnimationQueued: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var loopMode: ICSdkEKYCHDSaison.LottieLoopMode {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var shouldRasterizeWhenIdle: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var currentProgress: ICSdkEKYCHDSaison.AnimationProgressTime {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var currentTime: Foundation.TimeInterval {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var currentFrame: ICSdkEKYCHDSaison.AnimationFrameTime {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var realtimeAnimationFrame: ICSdkEKYCHDSaison.AnimationFrameTime {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var realtimeAnimationProgress: ICSdkEKYCHDSaison.AnimationProgressTime {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var animationSpeed: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var respectAnimationFrameRate: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var viewportFrame: CoreFoundation.CGRect? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) public var currentRenderingEngine: ICSdkEKYCHDSaison.RenderingEngine? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var currentPlaybackMode: ICSdkEKYCHDSaison.LottiePlaybackMode? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var mainThreadRenderingEngineShouldForceDisplayUpdateOnEachFrame: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public func loadAnimation(_ animationId: Swift.String? = nil, from dotLottieFile: ICSdkEKYCHDSaison.DotLottieFile)
+  @_Concurrency.MainActor(unsafe) public func loadAnimation(atIndex index: Swift.Int, from dotLottieFile: ICSdkEKYCHDSaison.DotLottieFile)
+  @_Concurrency.MainActor(unsafe) public func reloadImages()
+  @_Concurrency.MainActor(unsafe) public func forceDisplayUpdate()
+  @_Concurrency.MainActor(unsafe) public func setValueProvider(_ valueProvider: any ICSdkEKYCHDSaison.AnyValueProvider, keypath: ICSdkEKYCHDSaison.AnimationKeypath)
+  @_Concurrency.MainActor(unsafe) public func getValue(for keypath: ICSdkEKYCHDSaison.AnimationKeypath, atFrame: ICSdkEKYCHDSaison.AnimationFrameTime?) -> Any?
+  @_Concurrency.MainActor(unsafe) public func getOriginalValue(for keypath: ICSdkEKYCHDSaison.AnimationKeypath, atFrame: ICSdkEKYCHDSaison.AnimationFrameTime?) -> Any?
+  @_Concurrency.MainActor(unsafe) public func logHierarchyKeypaths()
+  @_Concurrency.MainActor(unsafe) public func allHierarchyKeypaths() -> [Swift.String]
+  @_Concurrency.MainActor(unsafe) public func addSubview(_ subview: ICSdkEKYCHDSaison.AnimationSubview, forLayerAt keypath: ICSdkEKYCHDSaison.AnimationKeypath)
+  @_Concurrency.MainActor(unsafe) public func convert(_ rect: CoreFoundation.CGRect, toLayerAt keypath: ICSdkEKYCHDSaison.AnimationKeypath?) -> CoreFoundation.CGRect?
+  @_Concurrency.MainActor(unsafe) public func convert(_ point: CoreFoundation.CGPoint, toLayerAt keypath: ICSdkEKYCHDSaison.AnimationKeypath?) -> CoreFoundation.CGPoint?
+  @_Concurrency.MainActor(unsafe) public func setNodeIsEnabled(isEnabled: Swift.Bool, keypath: ICSdkEKYCHDSaison.AnimationKeypath)
+  @_Concurrency.MainActor(unsafe) public func progressTime(forMarker named: Swift.String) -> ICSdkEKYCHDSaison.AnimationProgressTime?
+  @_Concurrency.MainActor(unsafe) public func frameTime(forMarker named: Swift.String) -> ICSdkEKYCHDSaison.AnimationFrameTime?
+  @_Concurrency.MainActor(unsafe) public func durationFrameTime(forMarker named: Swift.String) -> ICSdkEKYCHDSaison.AnimationFrameTime?
+  @objc deinit
+}
+final public class LottieLogger {
+  public init(assert: @escaping ICSdkEKYCHDSaison.LottieLogger.Assert = { condition, message, file, line in
+      // If we default to `Swift.assert` directly with `assert: Assert = Swift.assert`,
+      // the call will unexpectedly not respect the -O flag and will crash in release
+      // https://github.com/apple/swift/issues/60249
+      Swift.assert(condition(), message(), file: file, line: line)
+    }, assertionFailure: @escaping ICSdkEKYCHDSaison.LottieLogger.AssertionFailure = { message, file, line in
+      // If we default to `Swift.assertionFailure` directly with
+      // `assertionFailure: AssertionFailure = Swift.assertionFailure`,
+      // the call will unexpectedly not respect the -O flag and will crash in release
+      // https://github.com/apple/swift/issues/60249
+      Swift.assertionFailure(message(), file: file, line: line)
+    }, warn: @escaping ICSdkEKYCHDSaison.LottieLogger.Warn = { message, _, _ in
+    }, info: @escaping ICSdkEKYCHDSaison.LottieLogger.Info = { message in
+    })
+  public typealias Assert = (_ condition: @autoclosure () -> Swift.Bool, _ message: @autoclosure () -> Swift.String, _ fileID: Swift.StaticString, _ line: Swift.UInt) -> Swift.Void
+  public typealias AssertionFailure = (_ message: @autoclosure () -> Swift.String, _ fileID: Swift.StaticString, _ line: Swift.UInt) -> Swift.Void
+  public typealias Warn = (_ message: @autoclosure () -> Swift.String, _ fileID: Swift.StaticString, _ line: Swift.UInt) -> Swift.Void
+  public typealias Info = (_ message: @autoclosure () -> Swift.String) -> Swift.Void
+  public static var shared: ICSdkEKYCHDSaison.LottieLogger
+  final public func assert(_ condition: @autoclosure () -> Swift.Bool, _ message: @autoclosure () -> Swift.String = String(), fileID: Swift.StaticString = #fileID, line: Swift.UInt = #line)
+  final public func assertionFailure(_ message: @autoclosure () -> Swift.String = String(), fileID: Swift.StaticString = #fileID, line: Swift.UInt = #line)
+  final public func warn(_ message: @autoclosure () -> Swift.String = String(), fileID: Swift.StaticString = #fileID, line: Swift.UInt = #line)
+  final public func info(_ message: @autoclosure () -> Swift.String = String())
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.LottieLogger {
+  public static var printToConsole: ICSdkEKYCHDSaison.LottieLogger {
+    get
+  }
+}
+public enum LottieAnimationCache {
+  public static var shared: (any ICSdkEKYCHDSaison.AnimationCacheProvider)?
+}
+@objc public protocol QRScannerViewDelegate {
+  @objc func qrScanningDidFail()
+  @objc func qrScanningSucceededWithImage(_ image: UIKit.UIImage, value: Swift.String)
+  @objc func qrScanningDidStop()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class QRScannerView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: (any ICSdkEKYCHDSaison.QRScannerViewDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) public var captureSession: AVFoundation.AVCaptureSession!
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var layer: AVFoundation.AVCaptureVideoPreviewLayer {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.QRScannerView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var isSessionRunning: Swift.Bool {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func startScanning()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func stopScanning()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func resetDataToRescan()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func removeInputOutput()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func deallocSession()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func doInitialSetup(scanRect: CoreFoundation.CGRect)
+}
+extension ICSdkEKYCHDSaison.QRScannerView : AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func metadataOutput(_ output: AVFoundation.AVCaptureMetadataOutput, didOutput metadataObjects: [AVFoundation.AVMetadataObject], from connection: AVFoundation.AVCaptureConnection)
+}
+extension ICSdkEKYCHDSaison.QRScannerView : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+}
+extension ICSdkEKYCHDSaison.DotLottieFile {
+  public enum SynchronouslyBlockingCurrentThread {
+    public static func loadedFrom(filepath: Swift.String, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache) -> Swift.Result<ICSdkEKYCHDSaison.DotLottieFile, any Swift.Error>
+    public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache) -> Swift.Result<ICSdkEKYCHDSaison.DotLottieFile, any Swift.Error>
+    public static func loadedFrom(data: Foundation.Data, filename: Swift.String) -> Swift.Result<ICSdkEKYCHDSaison.DotLottieFile, any Swift.Error>
+  }
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
+  public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache) async throws -> ICSdkEKYCHDSaison.DotLottieFile
+  #endif
+  public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache, dispatchQueue: Dispatch.DispatchQueue = .dotLottie, handleResult: @escaping (Swift.Result<ICSdkEKYCHDSaison.DotLottieFile, any Swift.Error>) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
+  public static func loadedFrom(filepath: Swift.String, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache) async throws -> ICSdkEKYCHDSaison.DotLottieFile
+  #endif
+  public static func loadedFrom(filepath: Swift.String, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache, dispatchQueue: Dispatch.DispatchQueue = .dotLottie, handleResult: @escaping (Swift.Result<ICSdkEKYCHDSaison.DotLottieFile, any Swift.Error>) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
+  public static func asset(named name: Swift.String, bundle: Foundation.Bundle = Bundle.main, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache) async throws -> ICSdkEKYCHDSaison.DotLottieFile
+  #endif
+  public static func asset(named name: Swift.String, bundle: Foundation.Bundle = Bundle.main, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache, dispatchQueue: Dispatch.DispatchQueue = .dotLottie, handleResult: @escaping (Swift.Result<ICSdkEKYCHDSaison.DotLottieFile, any Swift.Error>) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
+  public static func loadedFrom(url: Foundation.URL, session: Foundation.URLSession = .shared, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache) async throws -> ICSdkEKYCHDSaison.DotLottieFile
+  #endif
+  public static func loadedFrom(url: Foundation.URL, session: Foundation.URLSession = .shared, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache, handleResult: @escaping (Swift.Result<ICSdkEKYCHDSaison.DotLottieFile, any Swift.Error>) -> Swift.Void)
+  public static func loadedFrom(data: Foundation.Data, filename: Swift.String, dispatchQueue: Dispatch.DispatchQueue = .dotLottie, handleResult: @escaping (Swift.Result<ICSdkEKYCHDSaison.DotLottieFile, any Swift.Error>) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
+  public static func loadedFrom(data: Foundation.Data, filename: Swift.String, dispatchQueue: Dispatch.DispatchQueue = .dotLottie) async throws -> ICSdkEKYCHDSaison.DotLottieFile
+  #endif
+}
+extension Dispatch.DispatchQueue {
+  public static let dotLottie: Dispatch.DispatchQueue
+}
+final public class Keyframe<T> {
+  public init(_ value: T, spatialInTangent: ICSdkEKYCHDSaison.LottieVector3D? = nil, spatialOutTangent: ICSdkEKYCHDSaison.LottieVector3D? = nil)
+  public init(value: T, time: ICSdkEKYCHDSaison.AnimationFrameTime, isHold: Swift.Bool = false, inTangent: ICSdkEKYCHDSaison.LottieVector2D? = nil, outTangent: ICSdkEKYCHDSaison.LottieVector2D? = nil, spatialInTangent: ICSdkEKYCHDSaison.LottieVector3D? = nil, spatialOutTangent: ICSdkEKYCHDSaison.LottieVector3D? = nil)
+  final public let value: T
+  final public let time: ICSdkEKYCHDSaison.AnimationFrameTime
+  final public let isHold: Swift.Bool
+  final public let inTangent: ICSdkEKYCHDSaison.LottieVector2D?
+  final public let outTangent: ICSdkEKYCHDSaison.LottieVector2D?
+  final public let spatialInTangent: ICSdkEKYCHDSaison.LottieVector3D?
+  final public let spatialOutTangent: ICSdkEKYCHDSaison.LottieVector3D?
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.Keyframe : Swift.Equatable where T : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.Keyframe<T>, rhs: ICSdkEKYCHDSaison.Keyframe<T>) -> Swift.Bool
+}
+extension ICSdkEKYCHDSaison.Keyframe : Swift.Hashable where T : Swift.Hashable {
+  final public func hash(into hasher: inout Swift.Hasher)
+  final public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ICSdkEKYCHDSaison.Keyframe : Swift.Sendable where T : Swift.Sendable {
+}
+extension UIKit.UIColor {
+  public var lottieColorValue: ICSdkEKYCHDSaison.LottieColor {
+    get
+  }
+}
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+public struct LottieButton {
+  public init(animation: ICSdkEKYCHDSaison.LottieAnimation?, action: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func configure(_ configure: @escaping (ICSdkEKYCHDSaison.AnimatedButton) -> Swift.Void) -> ICSdkEKYCHDSaison.LottieButton
+  public func configuration(_ configuration: ICSdkEKYCHDSaison.LottieConfiguration) -> ICSdkEKYCHDSaison.LottieButton
+  public func animate(fromProgress: ICSdkEKYCHDSaison.AnimationProgressTime, toProgress: ICSdkEKYCHDSaison.AnimationProgressTime, on event: ICSdkEKYCHDSaison.LottieControlEvent) -> ICSdkEKYCHDSaison.LottieButton
+  public func animate(fromMarker: Swift.String, toMarker: Swift.String, on event: ICSdkEKYCHDSaison.LottieControlEvent) -> ICSdkEKYCHDSaison.LottieButton
+  public func valueProvider<ValueProvider>(_ valueProvider: ValueProvider, for keypath: ICSdkEKYCHDSaison.AnimationKeypath) -> ICSdkEKYCHDSaison.LottieButton where ValueProvider : ICSdkEKYCHDSaison.AnyValueProvider, ValueProvider : Swift.Equatable
+  public typealias Body = @_opaqueReturnTypeOf("$s17ICSdkEKYCHDSaison12LottieButtonV4bodyQrvp", 0) __
+}
+public enum ColorFormatDenominator : Swift.Hashable {
+  case One
+  case OneHundred
+  case TwoFiftyFive
+  public static func == (a: ICSdkEKYCHDSaison.ColorFormatDenominator, b: ICSdkEKYCHDSaison.ColorFormatDenominator) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct LottieColor : Swift.Hashable {
+  public var r: Swift.Double
+  public var g: Swift.Double
+  public var b: Swift.Double
+  public var a: Swift.Double
+  public init(r: Swift.Double, g: Swift.Double, b: Swift.Double, a: Swift.Double, denominator: ICSdkEKYCHDSaison.ColorFormatDenominator = .One)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ICSdkEKYCHDSaison.LottieColor, b: ICSdkEKYCHDSaison.LottieColor) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ICSdkEKYCHDSaison.LottieAnimationView {
+  @_Concurrency.MainActor(unsafe) convenience public init(name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, imageProvider: (any ICSdkEKYCHDSaison.AnimationImageProvider)? = nil, animationCache: (any ICSdkEKYCHDSaison.AnimationCacheProvider)? = LottieAnimationCache.shared, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared)
+  @_Concurrency.MainActor(unsafe) convenience public init(filePath: Swift.String, imageProvider: (any ICSdkEKYCHDSaison.AnimationImageProvider)? = nil, animationCache: (any ICSdkEKYCHDSaison.AnimationCacheProvider)? = LottieAnimationCache.shared, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared)
+  @_Concurrency.MainActor(unsafe) convenience public init(url: Foundation.URL, imageProvider: (any ICSdkEKYCHDSaison.AnimationImageProvider)? = nil, session: Foundation.URLSession = .shared, closure: @escaping ICSdkEKYCHDSaison.LottieAnimationView.DownloadClosure, animationCache: (any ICSdkEKYCHDSaison.AnimationCacheProvider)? = LottieAnimationCache.shared, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared)
+  @_Concurrency.MainActor(unsafe) convenience public init(asset name: Swift.String, bundle: Foundation.Bundle = Bundle.main, imageProvider: (any ICSdkEKYCHDSaison.AnimationImageProvider)? = nil, animationCache: (any ICSdkEKYCHDSaison.AnimationCacheProvider)? = LottieAnimationCache.shared, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared)
+  @_Concurrency.MainActor(unsafe) convenience public init(dotLottieName name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, animationId: Swift.String? = nil, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, completion: ((ICSdkEKYCHDSaison.LottieAnimationView, (any Swift.Error)?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) convenience public init(dotLottieFilePath filePath: Swift.String, animationId: Swift.String? = nil, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, completion: ((ICSdkEKYCHDSaison.LottieAnimationView, (any Swift.Error)?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) convenience public init(dotLottieUrl url: Foundation.URL, animationId: Swift.String? = nil, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, session: Foundation.URLSession = .shared, completion: ((ICSdkEKYCHDSaison.LottieAnimationView, (any Swift.Error)?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) convenience public init(dotLottieAsset name: Swift.String, bundle: Foundation.Bundle = Bundle.main, animationId: Swift.String? = nil, dotLottieCache: (any ICSdkEKYCHDSaison.DotLottieCacheProvider)? = DotLottieCache.sharedCache, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, completion: ((ICSdkEKYCHDSaison.LottieAnimationView, (any Swift.Error)?) -> Swift.Void)? = nil)
+  public typealias DownloadClosure = ((any Swift.Error)?) -> Swift.Void
+}
+public typealias AnimationFrameTime = CoreFoundation.CGFloat
+public typealias AnimationProgressTime = CoreFoundation.CGFloat
+public enum LottieAnimationSource : Swift.Sendable {
+  case lottieAnimation(ICSdkEKYCHDSaison.LottieAnimation)
+  case dotLottieFile(ICSdkEKYCHDSaison.DotLottieFile)
+}
+extension ICSdkEKYCHDSaison.LottieAnimation {
+  final public var animationSource: ICSdkEKYCHDSaison.LottieAnimationSource {
+    get
+  }
+}
+extension ICSdkEKYCHDSaison.DotLottieFile {
+  final public var animationSource: ICSdkEKYCHDSaison.LottieAnimationSource {
+    get
+  }
+}
+@objc public class CompatibleAnimation : ObjectiveC.NSObject {
+  @objc public init(name: Swift.String, subdirectory: Swift.String? = nil, bundle: Foundation.Bundle = Bundle.main)
+  @objc deinit
+}
+@objc public enum CompatibleRenderingEngineOption : Swift.Int {
+  case shared
+  case defaultEngine
+  case automatic
+  case mainThread
+  case coreAnimation
+  public static func generateLottieConfiguration(_ configuration: ICSdkEKYCHDSaison.CompatibleRenderingEngineOption) -> ICSdkEKYCHDSaison.LottieConfiguration
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum CompatibleBackgroundBehavior : Swift.Int {
+  case stop
+  case pause
+  case pauseAndRestore
+  case forceFinish
+  case continuePlaying
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class CompatibleAnimationView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) convenience public init(compatibleAnimation: ICSdkEKYCHDSaison.CompatibleAnimation)
+  @objc @_Concurrency.MainActor(unsafe) public init(compatibleAnimation: ICSdkEKYCHDSaison.CompatibleAnimation, compatibleRenderingEngineOption: ICSdkEKYCHDSaison.CompatibleRenderingEngineOption)
+  @objc @_Concurrency.MainActor(unsafe) convenience public init(url: Foundation.URL)
+  @objc @_Concurrency.MainActor(unsafe) public init(url: Foundation.URL, compatibleRenderingEngineOption: ICSdkEKYCHDSaison.CompatibleRenderingEngineOption)
+  @objc @_Concurrency.MainActor(unsafe) convenience public init(data: Foundation.Data)
+  @objc @_Concurrency.MainActor(unsafe) public init(data: Foundation.Data, compatibleRenderingEngineOption: ICSdkEKYCHDSaison.CompatibleRenderingEngineOption)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @objc @_Concurrency.MainActor(unsafe) public var compatibleAnimation: ICSdkEKYCHDSaison.CompatibleAnimation? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var loopAnimationCount: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var compatibleDictionaryTextProvider: ICSdkEKYCHDSaison.CompatibleDictionaryTextProvider? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var contentMode: UIKit.UIView.ContentMode {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var shouldRasterizeWhenIdle: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var currentProgress: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var duration: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var currentTime: Foundation.TimeInterval {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var currentFrame: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var realtimeAnimationFrame: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var realtimeAnimationProgress: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var animationSpeed: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var respectAnimationFrameRate: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var isAnimationPlaying: Swift.Bool {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var backgroundMode: ICSdkEKYCHDSaison.CompatibleBackgroundBehavior {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public func play()
+  @objc @_Concurrency.MainActor(unsafe) public func play(completion: ((Swift.Bool) -> Swift.Void)?)
+  @objc @_Concurrency.MainActor(unsafe) public func play(fromProgress: CoreFoundation.CGFloat, toProgress: CoreFoundation.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) public func play(fromFrame: CoreFoundation.CGFloat, toFrame: CoreFoundation.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) public func play(fromMarker: Swift.String, toMarker: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) public func play(marker: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) public func stop()
+  @objc @_Concurrency.MainActor(unsafe) public func pause()
+  @objc @_Concurrency.MainActor(unsafe) public func reloadImages()
+  @objc @_Concurrency.MainActor(unsafe) public func forceDisplayUpdate()
+  @objc @_Concurrency.MainActor(unsafe) public func getValue(for keypath: ICSdkEKYCHDSaison.CompatibleAnimationKeypath, atFrame: CoreFoundation.CGFloat) -> Any?
+  @objc @_Concurrency.MainActor(unsafe) public func logHierarchyKeypaths()
+  @objc @_Concurrency.MainActor(unsafe) public func setColorValue(_ color: UIKit.UIColor, forKeypath keypath: ICSdkEKYCHDSaison.CompatibleAnimationKeypath)
+  @objc @_Concurrency.MainActor(unsafe) public func getColorValue(for keypath: ICSdkEKYCHDSaison.CompatibleAnimationKeypath, atFrame: CoreFoundation.CGFloat) -> UIKit.UIColor?
+  @objc @_Concurrency.MainActor(unsafe) public func addSubview(_ subview: ICSdkEKYCHDSaison.AnimationSubview, forLayerAt keypath: ICSdkEKYCHDSaison.CompatibleAnimationKeypath)
+  @objc @_Concurrency.MainActor(unsafe) public func convert(rect: CoreFoundation.CGRect, toLayerAt keypath: ICSdkEKYCHDSaison.CompatibleAnimationKeypath?) -> CoreFoundation.CGRect
+  @objc @_Concurrency.MainActor(unsafe) public func convert(point: CoreFoundation.CGPoint, toLayerAt keypath: ICSdkEKYCHDSaison.CompatibleAnimationKeypath?) -> CoreFoundation.CGPoint
+  @objc @_Concurrency.MainActor(unsafe) public func progressTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) public func frameTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) public func durationFrameTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
+  @objc deinit
+}
+@objc public class CompatibleDictionaryTextProvider : ObjectiveC.NSObject {
+  @objc public init(values: [Swift.String : Swift.String])
+  @objc deinit
+}
+public protocol AnimationFontProvider {
+  func fontFor(family: Swift.String, size: CoreFoundation.CGFloat) -> CoreText.CTFont?
+}
+final public class DefaultFontProvider : ICSdkEKYCHDSaison.AnimationFontProvider {
+  public init()
+  final public func fontFor(family: Swift.String, size: CoreFoundation.CGFloat) -> CoreText.CTFont?
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.DefaultFontProvider : Swift.Equatable {
+  public static func == (_: ICSdkEKYCHDSaison.DefaultFontProvider, _: ICSdkEKYCHDSaison.DefaultFontProvider) -> Swift.Bool
+}
+final public class ColorValueProvider {
+  public init(block: @escaping ICSdkEKYCHDSaison.ColorValueProvider.ColorValueBlock)
+  public init(_ color: ICSdkEKYCHDSaison.LottieColor)
+  public init(_ keyframes: [ICSdkEKYCHDSaison.Keyframe<ICSdkEKYCHDSaison.LottieColor>])
+  public typealias ColorValueBlock = (CoreFoundation.CGFloat) -> ICSdkEKYCHDSaison.LottieColor
+  final public var color: ICSdkEKYCHDSaison.LottieColor {
+    get
+    set
+  }
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public var storage: ICSdkEKYCHDSaison.ValueProviderStorage<ICSdkEKYCHDSaison.LottieColor> {
+    get
+  }
+  final public func hasUpdate(frame _: CoreFoundation.CGFloat) -> Swift.Bool
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.ColorValueProvider : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.ColorValueProvider, rhs: ICSdkEKYCHDSaison.ColorValueProvider) -> Swift.Bool
+}
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+public struct LottieView<Placeholder> where Placeholder : SwiftUI.View {
+  public init(animation: ICSdkEKYCHDSaison.LottieAnimation?) where Placeholder == SwiftUI.EmptyView
+  public init(dotLottieFile: ICSdkEKYCHDSaison.DotLottieFile?) where Placeholder == SwiftUI.EmptyView
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(_ loadAnimation: @escaping () async throws -> ICSdkEKYCHDSaison.LottieAnimation?) where Placeholder == SwiftUI.EmptyView
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(_ loadAnimation: @escaping () async throws -> ICSdkEKYCHDSaison.LottieAnimation?, @SwiftUI.ViewBuilder placeholder: @escaping (() -> Placeholder))
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(_ loadDotLottieFile: @escaping () async throws -> ICSdkEKYCHDSaison.DotLottieFile?) where Placeholder == SwiftUI.EmptyView
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(_ loadDotLottieFile: @escaping () async throws -> ICSdkEKYCHDSaison.DotLottieFile?, @SwiftUI.ViewBuilder placeholder: @escaping (() -> Placeholder))
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(_ loadAnimation: @escaping () async throws -> ICSdkEKYCHDSaison.LottieAnimationSource?) where Placeholder == SwiftUI.EmptyView
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public init(_ loadAnimation: @escaping () async throws -> ICSdkEKYCHDSaison.LottieAnimationSource?, @SwiftUI.ViewBuilder placeholder: @escaping () -> Placeholder)
+  #endif
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func configure(_ configure: @escaping (ICSdkEKYCHDSaison.LottieAnimationView) -> Swift.Void) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func resizable() -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  @available(*, deprecated, renamed: "playing()", message: "Will be removed in a future major release.")
+  public func play() -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func looping() -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  @available(*, deprecated, renamed: "playing(_:)", message: "Will be removed in a future major release.")
+  public func play(loopMode: ICSdkEKYCHDSaison.LottieLoopMode = .playOnce) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  @available(*, deprecated, renamed: "playbackMode(_:)", message: "Will be removed in a future major release.")
+  public func play(_ playbackMode: ICSdkEKYCHDSaison.LottiePlaybackMode) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func playing(_ mode: ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func playing(loopMode: ICSdkEKYCHDSaison.LottieLoopMode) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func playing() -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func paused(at state: ICSdkEKYCHDSaison.LottiePlaybackMode.PausedState = .currentFrame) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func playbackMode(_ playbackMode: ICSdkEKYCHDSaison.LottiePlaybackMode) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func animationDidLoad(_ animationDidLoad: @escaping (ICSdkEKYCHDSaison.LottieAnimationSource) -> Swift.Void) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func animationDidFinish(_ animationCompletionHandler: ICSdkEKYCHDSaison.LottieCompletionBlock?) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func backgroundBehavior(_ value: ICSdkEKYCHDSaison.LottieBackgroundBehavior) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func accessibilityLabel(_ accessibilityLabel: Swift.String?) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func configuration(_ configuration: ICSdkEKYCHDSaison.LottieConfiguration) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func logger(_ logger: ICSdkEKYCHDSaison.LottieLogger) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func imageProvider<ImageProvider>(_ imageProvider: ImageProvider) -> ICSdkEKYCHDSaison.LottieView<Placeholder> where ImageProvider : ICSdkEKYCHDSaison.AnimationImageProvider, ImageProvider : Swift.Equatable
+  public func textProvider<TextProvider>(_ textProvider: TextProvider) -> ICSdkEKYCHDSaison.LottieView<Placeholder> where TextProvider : ICSdkEKYCHDSaison.AnimationKeypathTextProvider, TextProvider : Swift.Equatable
+  public func fontProvider<FontProvider>(_ fontProvider: FontProvider) -> ICSdkEKYCHDSaison.LottieView<Placeholder> where FontProvider : ICSdkEKYCHDSaison.AnimationFontProvider, FontProvider : Swift.Equatable
+  public func valueProvider<ValueProvider>(_ valueProvider: ValueProvider, for keypath: ICSdkEKYCHDSaison.AnimationKeypath) -> ICSdkEKYCHDSaison.LottieView<Placeholder> where ValueProvider : ICSdkEKYCHDSaison.AnyValueProvider, ValueProvider : Swift.Equatable
+  public func currentProgress(_ currentProgress: ICSdkEKYCHDSaison.AnimationProgressTime?) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func currentFrame(_ currentFrame: ICSdkEKYCHDSaison.AnimationFrameTime?) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func currentTime(_ currentTime: Foundation.TimeInterval?) -> ICSdkEKYCHDSaison.LottieView<Placeholder>
+  public func reloadAnimationTrigger<Value>(_ value: Value, showPlaceholder: Swift.Bool = true) -> ICSdkEKYCHDSaison.LottieView<Placeholder> where Value : Swift.Equatable
+  @available(iOS 15.0, tvOS 15.0, macOS 12.0, *)
+  public func getRealtimeAnimationProgress(_ realtimeAnimationProgress: SwiftUI.Binding<ICSdkEKYCHDSaison.AnimationProgressTime>?) -> some SwiftUI.View
+  
+  @available(iOS 15.0, tvOS 15.0, macOS 12.0, *)
+  public func getRealtimeAnimationFrame(_ realtimeAnimationFrame: SwiftUI.Binding<ICSdkEKYCHDSaison.AnimationProgressTime>?) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s17ICSdkEKYCHDSaison10LottieViewV4bodyQrvp", 0) __<Placeholder>
+}
+public protocol Interpolatable : ICSdkEKYCHDSaison.AnyInterpolatable {
+  func interpolate(to: Self, amount: CoreFoundation.CGFloat) -> Self
+}
+public protocol SpatialInterpolatable : ICSdkEKYCHDSaison.AnyInterpolatable {
+  func interpolate(to: Self, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> Self
+}
+public protocol AnyInterpolatable {
+  func _interpolate(to: Self, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> Self
+}
+extension ICSdkEKYCHDSaison.Interpolatable {
+  public func _interpolate(to: Self, amount: CoreFoundation.CGFloat, spatialOutTangent _: CoreFoundation.CGPoint?, spatialInTangent _: CoreFoundation.CGPoint?) -> Self
+}
+extension ICSdkEKYCHDSaison.SpatialInterpolatable {
+  public func interpolate(to: Self, amount: CoreFoundation.CGFloat) -> Self
+  public func _interpolate(to: Self, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> Self
+}
+extension Swift.Double : ICSdkEKYCHDSaison.Interpolatable {
+}
+extension CoreFoundation.CGFloat : ICSdkEKYCHDSaison.Interpolatable {
+}
+extension Swift.Float : ICSdkEKYCHDSaison.Interpolatable {
+}
+extension ICSdkEKYCHDSaison.Interpolatable where Self : Swift.BinaryFloatingPoint {
+  public func interpolate(to: Self, amount: CoreFoundation.CGFloat) -> Self
+}
+extension CoreFoundation.CGRect : ICSdkEKYCHDSaison.Interpolatable {
+  public func interpolate(to: CoreFoundation.CGRect, amount: CoreFoundation.CGFloat) -> CoreFoundation.CGRect
+}
+extension CoreFoundation.CGSize : ICSdkEKYCHDSaison.Interpolatable {
+  public func interpolate(to: CoreFoundation.CGSize, amount: CoreFoundation.CGFloat) -> CoreFoundation.CGSize
+}
+extension CoreFoundation.CGPoint : ICSdkEKYCHDSaison.SpatialInterpolatable {
+  public func interpolate(to: CoreFoundation.CGPoint, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> CoreFoundation.CGPoint
+}
+extension ICSdkEKYCHDSaison.LottieColor : ICSdkEKYCHDSaison.Interpolatable {
+  public func interpolate(to: ICSdkEKYCHDSaison.LottieColor, amount: CoreFoundation.CGFloat) -> ICSdkEKYCHDSaison.LottieColor
+}
+extension ICSdkEKYCHDSaison.LottieVector1D : ICSdkEKYCHDSaison.Interpolatable {
+  public func interpolate(to: ICSdkEKYCHDSaison.LottieVector1D, amount: CoreFoundation.CGFloat) -> ICSdkEKYCHDSaison.LottieVector1D
+}
+extension ICSdkEKYCHDSaison.LottieVector2D : ICSdkEKYCHDSaison.SpatialInterpolatable {
+  public func interpolate(to: ICSdkEKYCHDSaison.LottieVector2D, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> ICSdkEKYCHDSaison.LottieVector2D
+}
+extension ICSdkEKYCHDSaison.LottieVector3D : ICSdkEKYCHDSaison.SpatialInterpolatable {
+  public func interpolate(to: ICSdkEKYCHDSaison.LottieVector3D, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> ICSdkEKYCHDSaison.LottieVector3D
+}
+extension Swift.Array : ICSdkEKYCHDSaison.Interpolatable, ICSdkEKYCHDSaison.AnyInterpolatable where Element : ICSdkEKYCHDSaison.Interpolatable {
+  public func interpolate(to: [Element], amount: CoreFoundation.CGFloat) -> [Element]
+}
+public protocol AnimationKeypathTextProvider : AnyObject {
+  func text(for keypath: ICSdkEKYCHDSaison.AnimationKeypath, sourceText: Swift.String) -> Swift.String?
+}
+@available(*, deprecated, message: "`AnimationKeypathTextProvider` has been deprecated and renamed to `LegacyAnimationTextProvider`. Instead, conform to `AnimationKeypathTextProvider` instead or conform to `LegacyAnimationTextProvider` explicitly.")
+public typealias AnimationTextProvider = ICSdkEKYCHDSaison.LegacyAnimationTextProvider
+public protocol LegacyAnimationTextProvider : ICSdkEKYCHDSaison.AnimationKeypathTextProvider {
+  func textFor(keypathName: Swift.String, sourceText: Swift.String) -> Swift.String
+}
+extension ICSdkEKYCHDSaison.LegacyAnimationTextProvider {
+  public func text(for _: ICSdkEKYCHDSaison.AnimationKeypath, sourceText _: Swift.String) -> Swift.String?
+}
+final public class DictionaryTextProvider : ICSdkEKYCHDSaison.AnimationKeypathTextProvider, ICSdkEKYCHDSaison.LegacyAnimationTextProvider {
+  public init(_ values: [Swift.String : Swift.String])
+  final public func text(for keypath: ICSdkEKYCHDSaison.AnimationKeypath, sourceText: Swift.String) -> Swift.String?
+  final public func textFor(keypathName: Swift.String, sourceText: Swift.String) -> Swift.String
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.DictionaryTextProvider : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.DictionaryTextProvider, rhs: ICSdkEKYCHDSaison.DictionaryTextProvider) -> Swift.Bool
+}
+final public class DefaultTextProvider : ICSdkEKYCHDSaison.AnimationKeypathTextProvider, ICSdkEKYCHDSaison.LegacyAnimationTextProvider {
+  public init()
+  final public func textFor(keypathName _: Swift.String, sourceText: Swift.String) -> Swift.String
+  final public func text(for _: ICSdkEKYCHDSaison.AnimationKeypath, sourceText: Swift.String) -> Swift.String
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.DefaultTextProvider : Swift.Equatable {
+  public static func == (_: ICSdkEKYCHDSaison.DefaultTextProvider, _: ICSdkEKYCHDSaison.DefaultTextProvider) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AnimationSubview : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.LottieColor : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class DotLottieFile {
+  public struct Animation {
+    public let animation: ICSdkEKYCHDSaison.LottieAnimation
+    public let configuration: ICSdkEKYCHDSaison.DotLottieConfiguration
+  }
+  final public var animations: [ICSdkEKYCHDSaison.DotLottieFile.Animation] {
+    get
+  }
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.DotLottieFile : @unchecked Swift.Sendable {
+}
+extension UIKit.UIImage {
+  @objc dynamic public func addMetaData(path: Foundation.URL, make: Swift.String) -> Foundation.NSData?
+  @objc dynamic public func addMetaData(data: Foundation.Data, make: Swift.String) -> Foundation.NSData?
+  @objc dynamic public func removeExifData(data: Foundation.NSData) -> Foundation.NSData
+  @objc dynamic public func rotate(radians: Swift.Float) -> UIKit.UIImage?
+}
+extension UIKit.UIImage {
+  @objc dynamic public func readQRCode(completion: @escaping (Swift.String?) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class LottieAnimationViewBase : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var contentMode: UIKit.UIView.ContentMode {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class ImageAsset : ICSdkEKYCHDSaison.Asset {
+  final public let name: Swift.String
+  final public let directory: Swift.String
+  final public let width: Swift.Double
+  final public let height: Swift.Double
+  override final public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+@objc final public class CompatibleAnimationKeypath : ObjectiveC.NSObject {
+  @objc public init(keypath: Swift.String)
+  @objc public init(keys: [Swift.String])
+  final public let animationKeypath: ICSdkEKYCHDSaison.AnimationKeypath
+  @objc deinit
+}
+final public class PointValueProvider {
+  public init(block: @escaping ICSdkEKYCHDSaison.PointValueProvider.PointValueBlock)
+  public init(_ point: CoreFoundation.CGPoint)
+  public typealias PointValueBlock = (CoreFoundation.CGFloat) -> CoreFoundation.CGPoint
+  final public var point: CoreFoundation.CGPoint {
+    get
+    set
+  }
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public var storage: ICSdkEKYCHDSaison.ValueProviderStorage<ICSdkEKYCHDSaison.LottieVector3D> {
+    get
+  }
+  final public func hasUpdate(frame _: CoreFoundation.CGFloat) -> Swift.Bool
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.PointValueProvider : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.PointValueProvider, rhs: ICSdkEKYCHDSaison.PointValueProvider) -> Swift.Bool
+}
+@available(*, deprecated, message: "Use DefaultAnimationCache instead, which is thread-safe and automatically responds to memory pressure.")
+public typealias LRUAnimationCache = ICSdkEKYCHDSaison.DefaultAnimationCache
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+public struct LottieSwitch {
+  public init(animation: ICSdkEKYCHDSaison.LottieAnimation?)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func configure(_ configure: @escaping (ICSdkEKYCHDSaison.AnimatedSwitch) -> Swift.Void) -> ICSdkEKYCHDSaison.LottieSwitch
+  public func configuration(_ configuration: ICSdkEKYCHDSaison.LottieConfiguration) -> ICSdkEKYCHDSaison.LottieSwitch
+  public func isOn(_ binding: SwiftUI.Binding<Swift.Bool>) -> ICSdkEKYCHDSaison.LottieSwitch
+  public func onAnimation(fromProgress onStartProgress: ICSdkEKYCHDSaison.AnimationProgressTime, toProgress onEndProgress: ICSdkEKYCHDSaison.AnimationProgressTime) -> ICSdkEKYCHDSaison.LottieSwitch
+  public func offAnimation(fromProgress offStartProgress: ICSdkEKYCHDSaison.AnimationProgressTime, toProgress offEndProgress: ICSdkEKYCHDSaison.AnimationProgressTime) -> ICSdkEKYCHDSaison.LottieSwitch
+  public func valueProvider<ValueProvider>(_ valueProvider: ValueProvider, for keypath: ICSdkEKYCHDSaison.AnimationKeypath) -> ICSdkEKYCHDSaison.LottieSwitch where ValueProvider : ICSdkEKYCHDSaison.AnyValueProvider, ValueProvider : Swift.Equatable
+  public typealias Body = @_opaqueReturnTypeOf("$s17ICSdkEKYCHDSaison12LottieSwitchV4bodyQrvp", 0) __
+}
+@objc @_hasMissingDesignatedInitializers public class LottieAnimationLayer : QuartzCore.CALayer {
+  public init(animation: ICSdkEKYCHDSaison.LottieAnimation?, imageProvider: (any ICSdkEKYCHDSaison.AnimationImageProvider)? = nil, textProvider: any ICSdkEKYCHDSaison.AnimationKeypathTextProvider = DefaultTextProvider(), fontProvider: any ICSdkEKYCHDSaison.AnimationFontProvider = DefaultFontProvider(), configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, logger: ICSdkEKYCHDSaison.LottieLogger = .shared)
+  public init(dotLottie: ICSdkEKYCHDSaison.DotLottieFile?, animationId: Swift.String? = nil, textProvider: any ICSdkEKYCHDSaison.AnimationKeypathTextProvider = DefaultTextProvider(), fontProvider: any ICSdkEKYCHDSaison.AnimationFontProvider = DefaultFontProvider(), configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, logger: ICSdkEKYCHDSaison.LottieLogger = .shared)
+  public init(configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared, logger: ICSdkEKYCHDSaison.LottieLogger = .shared)
+  open func play(completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  open func play(fromProgress: ICSdkEKYCHDSaison.AnimationProgressTime? = nil, toProgress: ICSdkEKYCHDSaison.AnimationProgressTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode? = nil, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  open func play(fromFrame: ICSdkEKYCHDSaison.AnimationFrameTime? = nil, toFrame: ICSdkEKYCHDSaison.AnimationFrameTime, loopMode: ICSdkEKYCHDSaison.LottieLoopMode? = nil, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  open func play(fromMarker: Swift.String? = nil, toMarker: Swift.String, playEndMarkerFrame: Swift.Bool = true, loopMode: ICSdkEKYCHDSaison.LottieLoopMode? = nil, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  open func play(marker: Swift.String, loopMode: ICSdkEKYCHDSaison.LottieLoopMode? = nil, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  open func play(markers: [Swift.String], completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  open func stop()
+  open func pause()
+  open func pause(at state: ICSdkEKYCHDSaison.LottiePlaybackMode.PausedState)
+  @available(*, deprecated, renamed: "setPlaybackMode(_:completion:)", message: "Will be removed in a future major release.")
+  open func play(_ playbackMode: ICSdkEKYCHDSaison.LottiePlaybackMode, animationCompletionHandler: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  open func setPlaybackMode(_ playbackMode: ICSdkEKYCHDSaison.LottiePlaybackMode, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  open func play(_ playbackMode: ICSdkEKYCHDSaison.LottiePlaybackMode.PlaybackMode, completion: ICSdkEKYCHDSaison.LottieCompletionBlock? = nil)
+  public var currentPlaybackMode: ICSdkEKYCHDSaison.LottiePlaybackMode? {
+    get
+  }
+  public var valueProviders: [ICSdkEKYCHDSaison.AnimationKeypath : any ICSdkEKYCHDSaison.AnyValueProvider] {
+    get
+  }
+  public var animationLayerDidLoad: ((_ animationLayer: ICSdkEKYCHDSaison.LottieAnimationLayer, _ renderingEngine: ICSdkEKYCHDSaison.RenderingEngineOption) -> Swift.Void)?
+  public var configuration: ICSdkEKYCHDSaison.LottieConfiguration {
+    get
+    set
+  }
+  public var animationLayer: QuartzCore.CALayer? {
+    get
+  }
+  public var screenScale: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  public var backgroundBehavior: ICSdkEKYCHDSaison.LottieBackgroundBehavior {
+    get
+    set
+  }
+  public var animation: ICSdkEKYCHDSaison.LottieAnimation? {
+    get
+    set
+  }
+  public var animationLoaded: ((_ animationLayer: ICSdkEKYCHDSaison.LottieAnimationLayer, _ animation: ICSdkEKYCHDSaison.LottieAnimation) -> Swift.Void)? {
+    get
+    set
+  }
+  public var imageProvider: any ICSdkEKYCHDSaison.AnimationImageProvider {
+    get
+    set
+  }
+  public var textProvider: any ICSdkEKYCHDSaison.AnimationKeypathTextProvider {
+    get
+    set
+  }
+  public var fontProvider: any ICSdkEKYCHDSaison.AnimationFontProvider {
+    get
+    set
+  }
+  public var maskAnimationToBounds: Swift.Bool {
+    get
+    set
+  }
+  public var isAnimationPlaying: Swift.Bool {
+    get
+  }
+  public var loopMode: ICSdkEKYCHDSaison.LottieLoopMode {
+    get
+    set
+  }
+  public var shouldRasterizeWhenIdle: Swift.Bool {
+    get
+    set
+  }
+  public var currentProgress: ICSdkEKYCHDSaison.AnimationProgressTime {
+    get
+    set
+  }
+  public var currentTime: Foundation.TimeInterval {
+    get
+    set
+  }
+  public var currentFrame: ICSdkEKYCHDSaison.AnimationFrameTime {
+    get
+    set
+  }
+  public var realtimeAnimationFrame: ICSdkEKYCHDSaison.AnimationFrameTime {
+    get
+  }
+  public var realtimeAnimationProgress: ICSdkEKYCHDSaison.AnimationProgressTime {
+    get
+  }
+  public var animationSpeed: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  public var respectAnimationFrameRate: Swift.Bool {
+    get
+    set
+  }
+  public var currentRenderingEngine: ICSdkEKYCHDSaison.RenderingEngine? {
+    get
+  }
+  public var mainThreadRenderingEngineShouldForceDisplayUpdateOnEachFrame: Swift.Bool {
+    get
+    set
+  }
+  public func loadAnimation(_ animationId: Swift.String? = nil, from dotLottieFile: ICSdkEKYCHDSaison.DotLottieFile)
+  public func loadAnimation(atIndex index: Swift.Int, from dotLottieFile: ICSdkEKYCHDSaison.DotLottieFile)
+  public func reloadImages()
+  public func forceDisplayUpdate()
+  public func setValueProvider(_ valueProvider: any ICSdkEKYCHDSaison.AnyValueProvider, keypath: ICSdkEKYCHDSaison.AnimationKeypath)
+  public func getValue(for keypath: ICSdkEKYCHDSaison.AnimationKeypath, atFrame: ICSdkEKYCHDSaison.AnimationFrameTime?) -> Any?
+  public func getOriginalValue(for keypath: ICSdkEKYCHDSaison.AnimationKeypath, atFrame: ICSdkEKYCHDSaison.AnimationFrameTime?) -> Any?
+  public func logHierarchyKeypaths()
+  public func allHierarchyKeypaths() -> [Swift.String]
+  public func convert(_ rect: CoreFoundation.CGRect, toLayerAt keypath: ICSdkEKYCHDSaison.AnimationKeypath?) -> CoreFoundation.CGRect?
+  public func convert(_ point: CoreFoundation.CGPoint, toLayerAt keypath: ICSdkEKYCHDSaison.AnimationKeypath?) -> CoreFoundation.CGPoint?
+  public func setNodeIsEnabled(isEnabled: Swift.Bool, keypath: ICSdkEKYCHDSaison.AnimationKeypath)
+  public func progressTime(forMarker named: Swift.String) -> ICSdkEKYCHDSaison.AnimationProgressTime?
+  public func frameTime(forMarker named: Swift.String) -> ICSdkEKYCHDSaison.AnimationFrameTime?
+  public func durationFrameTime(forMarker named: Swift.String) -> ICSdkEKYCHDSaison.AnimationFrameTime?
+  public func updateAnimationForBackgroundState()
+  public func updateAnimationForForegroundState(wasWaitingToPlayAnimation: Swift.Bool)
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.LottieAnimation {
+  public typealias DownloadClosure = (ICSdkEKYCHDSaison.LottieAnimation?) -> Swift.Void
+  final public var duration: Foundation.TimeInterval {
+    get
+  }
+  final public var bounds: CoreFoundation.CGRect {
+    get
+  }
+  final public var size: CoreFoundation.CGSize {
+    get
+  }
+  public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, animationCache: (any ICSdkEKYCHDSaison.AnimationCacheProvider)? = LottieAnimationCache.shared) -> ICSdkEKYCHDSaison.LottieAnimation?
+  public static func filepath(_ filepath: Swift.String, animationCache: (any ICSdkEKYCHDSaison.AnimationCacheProvider)? = LottieAnimationCache.shared) -> ICSdkEKYCHDSaison.LottieAnimation?
+  public static func asset(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, animationCache: (any ICSdkEKYCHDSaison.AnimationCacheProvider)? = LottieAnimationCache.shared) -> ICSdkEKYCHDSaison.LottieAnimation?
+  public static func from(data: Foundation.Data, strategy: ICSdkEKYCHDSaison.DecodingStrategy = LottieConfiguration.shared.decodingStrategy) throws -> ICSdkEKYCHDSaison.LottieAnimation
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
+  public static func loadedFrom(url: Foundation.URL, session: Foundation.URLSession = .shared, animationCache: (any ICSdkEKYCHDSaison.AnimationCacheProvider)? = LottieAnimationCache.shared) async -> ICSdkEKYCHDSaison.LottieAnimation?
+  #endif
+  public static func loadedFrom(url: Foundation.URL, session: Foundation.URLSession = .shared, closure: @escaping ICSdkEKYCHDSaison.LottieAnimation.DownloadClosure, animationCache: (any ICSdkEKYCHDSaison.AnimationCacheProvider)? = LottieAnimationCache.shared)
+  final public func progressTime(forMarker named: Swift.String) -> ICSdkEKYCHDSaison.AnimationProgressTime?
+  final public func frameTime(forMarker named: Swift.String) -> ICSdkEKYCHDSaison.AnimationFrameTime?
+  final public func durationFrameTime(forMarker named: Swift.String) -> ICSdkEKYCHDSaison.AnimationFrameTime?
+  final public func progressTime(forFrame frameTime: ICSdkEKYCHDSaison.AnimationFrameTime, clamped: Swift.Bool = true) -> ICSdkEKYCHDSaison.AnimationProgressTime
+  final public func frameTime(forProgress progressTime: ICSdkEKYCHDSaison.AnimationProgressTime) -> ICSdkEKYCHDSaison.AnimationFrameTime
+  final public func time(forFrame frameTime: ICSdkEKYCHDSaison.AnimationFrameTime) -> Foundation.TimeInterval
+  final public func frameTime(forTime time: Foundation.TimeInterval) -> ICSdkEKYCHDSaison.AnimationFrameTime
+}
+extension Foundation.Bundle : @unchecked Swift.Sendable {
+}
+extension ICSdkEKYCHDSaison.LottieVector1D : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct LottieVector2D : Swift.Codable, Swift.Hashable, Swift.Sendable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ICSdkEKYCHDSaison.LottieVector2D, b: ICSdkEKYCHDSaison.LottieVector2D) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ICSdkEKYCHDSaison.LottieVector3D : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension ICSdkEKYCHDSaison.LottieVector3D {
+  public var pointValue: CoreFoundation.CGPoint {
+    get
+  }
+  public var sizeValue: CoreFoundation.CGSize {
+    get
+  }
+}
+final public class FloatValueProvider {
+  public init(block: @escaping ICSdkEKYCHDSaison.FloatValueProvider.CGFloatValueBlock)
+  public init(_ float: CoreFoundation.CGFloat)
+  public typealias CGFloatValueBlock = (CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
+  final public var float: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public var storage: ICSdkEKYCHDSaison.ValueProviderStorage<ICSdkEKYCHDSaison.LottieVector1D> {
+    get
+  }
+  final public func hasUpdate(frame _: CoreFoundation.CGFloat) -> Swift.Bool
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.FloatValueProvider : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.FloatValueProvider, rhs: ICSdkEKYCHDSaison.FloatValueProvider) -> Swift.Bool
+}
+public enum DecodingStrategy : Swift.Hashable {
+  case legacyCodable
+  case dictionaryBased
+  public static func == (a: ICSdkEKYCHDSaison.DecodingStrategy, b: ICSdkEKYCHDSaison.DecodingStrategy) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct DotLottieConfiguration {
+  public var id: Swift.String
+  public var imageProvider: (any ICSdkEKYCHDSaison.AnimationImageProvider)?
+  public var loopMode: ICSdkEKYCHDSaison.LottieLoopMode
+  public var speed: Swift.Double
+}
+public protocol DotLottieCacheProvider {
+  func file(forKey: Swift.String) -> ICSdkEKYCHDSaison.DotLottieFile?
+  func setFile(_ lottie: ICSdkEKYCHDSaison.DotLottieFile, forKey: Swift.String)
+  func clearCache()
+}
+public enum RenderingEngineOption : Swift.Hashable {
+  case automatic
+  case specific(ICSdkEKYCHDSaison.RenderingEngine)
+  public static var mainThread: ICSdkEKYCHDSaison.RenderingEngineOption {
+    get
+  }
+  public static var coreAnimation: ICSdkEKYCHDSaison.RenderingEngineOption {
+    get
+  }
+}
+public enum RenderingEngine : Swift.Hashable {
+  case mainThread
+  case coreAnimation
+}
+extension ICSdkEKYCHDSaison.RenderingEngineOption : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+extension ICSdkEKYCHDSaison.RenderingEngine : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+public typealias LottieControlType = UIKit.UIControl
+public typealias LottieControlState = UIKit.UIControl.State
+public typealias LottieControlEvent = UIKit.UIControl.Event
+public class FilepathImageProvider : ICSdkEKYCHDSaison.AnimationImageProvider {
+  public init(filepath: Swift.String, contentsGravity: QuartzCore.CALayerContentsGravity = .resize)
+  public init(filepath: Foundation.URL, contentsGravity: QuartzCore.CALayerContentsGravity = .resize)
+  public func imageForAsset(asset: ICSdkEKYCHDSaison.ImageAsset) -> CoreGraphics.CGImage?
+  public func contentsGravity(for _: ICSdkEKYCHDSaison.ImageAsset) -> QuartzCore.CALayerContentsGravity
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.FilepathImageProvider : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.FilepathImageProvider, rhs: ICSdkEKYCHDSaison.FilepathImageProvider) -> Swift.Bool
+}
+public struct AnimationKeypath : Swift.Hashable, Swift.ExpressibleByStringLiteral {
+  public init(keypath: Swift.String)
+  public init(stringLiteral: Swift.String)
+  public init(keys: [Swift.String])
+  public var keys: [Swift.String] {
+    get
+  }
+  public var string: Swift.String {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ICSdkEKYCHDSaison.AnimationKeypath, b: ICSdkEKYCHDSaison.AnimationKeypath) -> Swift.Bool
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct LottieVector1D : Swift.Hashable, Swift.Sendable {
+  public init(_ value: Swift.Double)
+  public let value: Swift.Double
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ICSdkEKYCHDSaison.LottieVector1D, b: ICSdkEKYCHDSaison.LottieVector1D) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct LottieVector3D : Swift.Hashable, Swift.Sendable {
+  public let x: Swift.Double
+  public let y: Swift.Double
+  public let z: Swift.Double
+  public init(x: Swift.Double, y: Swift.Double, z: Swift.Double)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ICSdkEKYCHDSaison.LottieVector3D, b: ICSdkEKYCHDSaison.LottieVector3D) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class DotLottieCache : ICSdkEKYCHDSaison.DotLottieCacheProvider {
+  public init()
+  public static let sharedCache: ICSdkEKYCHDSaison.DotLottieCache
+  public var cacheSize: Swift.Int {
+    get
+    set
+  }
+  public func clearCache()
+  public func file(forKey key: Swift.String) -> ICSdkEKYCHDSaison.DotLottieFile?
+  public func setFile(_ lottie: ICSdkEKYCHDSaison.DotLottieFile, forKey key: Swift.String)
+  @objc deinit
+}
+infix operator +| : DefaultPrecedence
+infix operator +- : DefaultPrecedence
+public protocol AnyValueProvider {
+  var valueType: any Any.Type { get }
+  var typeErasedStorage: ICSdkEKYCHDSaison.AnyValueProviderStorage { get }
+  func hasUpdate(frame: ICSdkEKYCHDSaison.AnimationFrameTime) -> Swift.Bool
+}
+extension ICSdkEKYCHDSaison.AnyValueProvider {
+  public func value(frame: ICSdkEKYCHDSaison.AnimationFrameTime) -> Any
+}
+public enum ValueProviderStorage<T> where T : ICSdkEKYCHDSaison.AnyInterpolatable {
+  case singleValue(T)
+  case keyframes([ICSdkEKYCHDSaison.Keyframe<T>])
+  case closure((ICSdkEKYCHDSaison.AnimationFrameTime) -> T)
+}
+public enum AnyValueProviderStorage {
+  case singleValue(Any)
+  case keyframes([ICSdkEKYCHDSaison.Keyframe<Any>], interpolate: (ICSdkEKYCHDSaison.AnimationFrameTime) -> Any)
+  case closure((ICSdkEKYCHDSaison.AnimationFrameTime) -> Any)
+}
+public enum LayerType : Swift.Int, Swift.Codable {
+  case precomp
+  case solid
+  case image
+  case null
+  case shape
+  case text
+  case unknown
+  public init(from decoder: any Swift.Decoder) throws
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum MatteType : Swift.Int, Swift.Codable {
+  case none
+  case add
+  case invert
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum BlendMode : Swift.Int, Swift.Codable {
+  case normal
+  case multiply
+  case screen
+  case overlay
+  case darken
+  case lighten
+  case colorDodge
+  case colorBurn
+  case hardLight
+  case softLight
+  case difference
+  case exclusion
+  case hue
+  case saturation
+  case color
+  case luminosity
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ReducedMotionOption {
+  case specific(ICSdkEKYCHDSaison.ReducedMotionMode)
+  case dynamic(any ICSdkEKYCHDSaison.ReducedMotionOptionProvider, dataID: Swift.AnyHashable)
+}
+extension ICSdkEKYCHDSaison.ReducedMotionOption {
+  public static var standardMotion: ICSdkEKYCHDSaison.ReducedMotionOption {
+    get
+  }
+  public static var reducedMotion: ICSdkEKYCHDSaison.ReducedMotionOption {
+    get
+  }
+  public static var systemReducedMotionToggle: ICSdkEKYCHDSaison.ReducedMotionOption {
+    get
+  }
+}
+extension ICSdkEKYCHDSaison.ReducedMotionOption {
+  public var currentReducedMotionMode: ICSdkEKYCHDSaison.ReducedMotionMode {
+    get
+  }
+}
+extension ICSdkEKYCHDSaison.ReducedMotionOption : Swift.Hashable {
+  public static func == (lhs: ICSdkEKYCHDSaison.ReducedMotionOption, rhs: ICSdkEKYCHDSaison.ReducedMotionOption) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum ReducedMotionMode : Swift.Hashable {
+  case standardMotion
+  case reducedMotion
+  public static func == (a: ICSdkEKYCHDSaison.ReducedMotionMode, b: ICSdkEKYCHDSaison.ReducedMotionMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol ReducedMotionOptionProvider {
+  var currentReducedMotionMode: ICSdkEKYCHDSaison.ReducedMotionMode { get }
+}
+public struct SystemReducedMotionOptionProvider : ICSdkEKYCHDSaison.ReducedMotionOptionProvider {
+  public init()
+  public var currentReducedMotionMode: ICSdkEKYCHDSaison.ReducedMotionMode {
+    get
+  }
+}
+public class DefaultAnimationCache : ICSdkEKYCHDSaison.AnimationCacheProvider, @unchecked Swift.Sendable {
+  public init()
+  public static let sharedCache: ICSdkEKYCHDSaison.DefaultAnimationCache
+  public var cacheSize: Swift.Int {
+    get
+    set
+  }
+  public func clearCache()
+  public func animation(forKey key: Swift.String) -> ICSdkEKYCHDSaison.LottieAnimation?
+  public func setAnimation(_ animation: ICSdkEKYCHDSaison.LottieAnimation, forKey key: Swift.String)
+  @objc deinit
+}
+public protocol AnimationImageProvider {
+  var cacheEligible: Swift.Bool { get }
+  func imageForAsset(asset: ICSdkEKYCHDSaison.ImageAsset) -> CoreGraphics.CGImage?
+  func contentsGravity(for asset: ICSdkEKYCHDSaison.ImageAsset) -> QuartzCore.CALayerContentsGravity
+}
+extension ICSdkEKYCHDSaison.AnimationImageProvider {
+  public var cacheEligible: Swift.Bool {
+    get
+  }
+  public func contentsGravity(for _: ICSdkEKYCHDSaison.ImageAsset) -> QuartzCore.CALayerContentsGravity
+}
+@objc public enum ParallelMergeAlignment : Swift.Int {
+  case vertical
+  case horizontal
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc open class DPVideoMatrix : ObjectiveC.NSObject {
+  public init(rows: Swift.UInt, columns: Swift.UInt)
+  @objc public func initWith(rows: Swift.UInt, columns: Swift.UInt)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc open class DPVideoMerger : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.DPVideoMerger {
+  @objc dynamic open func mergeVideos(withFileURLs videoFileURLs: [Foundation.URL], videoResolution: CoreFoundation.CGSize = CGSize(width: -1, height: -1), videoQuality: Swift.String = AVAssetExportPresetMediumQuality, completion: @escaping (_ mergedVideoURL: Foundation.URL?, _ error: (any Swift.Error)?) -> Swift.Void)
+  @objc dynamic open func gridMergeVideos(withFileURLs videoFileURLs: [Foundation.URL], matrix: ICSdkEKYCHDSaison.DPVideoMatrix = DPVideoMatrix(rows: 2, columns: 2), audioFileURL: Foundation.URL? = nil, videoResolution: CoreFoundation.CGSize, isRepeatVideo: Swift.Bool = false, isRepeatAudio: Swift.Bool = false, isAudio: Swift.Bool = true, videoDuration: Swift.Int = -1, videoQuality: Swift.String = AVAssetExportPresetMediumQuality, completion: @escaping (_ mergedVideoURL: Foundation.URL?, _ error: (any Swift.Error)?) -> Swift.Void)
+  @available(*, deprecated, message: "Use grid merge using matrix")
+  @objc dynamic open func parallelMergeVideos(withFileURLs videoFileURLs: [Foundation.URL], audioFileURL: Foundation.URL? = nil, videoResolution: CoreFoundation.CGSize, isRepeatVideo: Swift.Bool = false, isRepeatAudio: Swift.Bool = false, videoDuration: Swift.Int = -1, videoQuality: Swift.String = AVAssetExportPresetMediumQuality, alignment: ICSdkEKYCHDSaison.ParallelMergeAlignment = .vertical, completion: @escaping (_ mergedVideoURL: Foundation.URL?, _ error: (any Swift.Error)?) -> Swift.Void)
+}
+@_hasMissingDesignatedInitializers public class Asset : Swift.Codable {
+  required public init(from decoder: any Swift.Decoder) throws
+  final public let id: Swift.String
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension ICSdkEKYCHDSaison.Asset : @unchecked Swift.Sendable {
+}
+public enum CoordinateSpace : Swift.Int, Swift.Codable, Swift.Sendable {
+  case type2d
+  case type3d
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+final public class LottieAnimation : Swift.Codable, Swift.Sendable {
+  required public init(from decoder: any Swift.Decoder) throws
+  public init(dictionary: [Swift.String : Any]) throws
+  final public let startFrame: ICSdkEKYCHDSaison.AnimationFrameTime
+  final public let endFrame: ICSdkEKYCHDSaison.AnimationFrameTime
+  final public let framerate: Swift.Double
+  final public var markerNames: [Swift.String] {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
+}
+extension QuartzCore.CALayer {
+  @nonobjc public func logLayerTree(withIndent: Swift.Int = 0)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ICEkycConstant : ObjectiveC.NSObject {
+  @objc public static let FontRegular: Swift.String
+  @objc public static let FontMedium: Swift.String
+  @objc public static let FontSemiBold: Swift.String
+  @objc public static let FontBold: Swift.String
+  @objc public static let IsIpad: (Swift.Bool)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class BundleImageProvider : ICSdkEKYCHDSaison.AnimationImageProvider {
+  public init(bundle: Foundation.Bundle, searchPath: Swift.String?, contentsGravity: QuartzCore.CALayerContentsGravity = .resize)
+  public func imageForAsset(asset: ICSdkEKYCHDSaison.ImageAsset) -> CoreGraphics.CGImage?
+  public func contentsGravity(for _: ICSdkEKYCHDSaison.ImageAsset) -> QuartzCore.CALayerContentsGravity
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.BundleImageProvider : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.BundleImageProvider, rhs: ICSdkEKYCHDSaison.BundleImageProvider) -> Swift.Bool
+}
+@objc @_Concurrency.MainActor(unsafe) open class AnimatedControl : ICSdkEKYCHDSaison.LottieControlType {
+  @_Concurrency.MainActor(unsafe) public init(animation: ICSdkEKYCHDSaison.LottieAnimation?, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isSelected: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isHighlighted: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func continueTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func cancelTracking(with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) open func animationDidSet()
+  @_Concurrency.MainActor(unsafe) final public let animationView: ICSdkEKYCHDSaison.LottieAnimationView
+  @_Concurrency.MainActor(unsafe) public var animation: ICSdkEKYCHDSaison.LottieAnimation? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var animationSpeed: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public func setLayer(named: Swift.String, forState: ICSdkEKYCHDSaison.LottieControlState)
+  @_Concurrency.MainActor(unsafe) public func setValueProvider(_ valueProvider: any ICSdkEKYCHDSaison.AnyValueProvider, keypath: ICSdkEKYCHDSaison.AnimationKeypath)
+  @objc deinit
+}
+public typealias LottieCompletionBlock = (_ completed: Swift.Bool) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class AnimatedButton : ICSdkEKYCHDSaison.AnimatedControl {
+  @_Concurrency.MainActor(unsafe) override public init(animation: ICSdkEKYCHDSaison.LottieAnimation?, configuration: ICSdkEKYCHDSaison.LottieConfiguration = .shared)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) public var performAction: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var accessibilityTraits: UIKit.UIAccessibilityTraits {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public func setPlayRange(fromProgress: ICSdkEKYCHDSaison.AnimationProgressTime, toProgress: ICSdkEKYCHDSaison.AnimationProgressTime, event: ICSdkEKYCHDSaison.LottieControlEvent)
+  @_Concurrency.MainActor(unsafe) public func setPlayRange(fromMarker fromName: Swift.String, toMarker toName: Swift.String, event: ICSdkEKYCHDSaison.LottieControlEvent)
+  @objc deinit
+}
+public enum DotLottieError : Swift.Error {
+  case noDataLoaded
+  case assetNotFound(name: Swift.String, bundle: Foundation.Bundle?)
+  case loadingFromAssetNotSupported
+  @available(*, deprecated, message: "Unused")
+  case invalidFileFormat
+  @available(*, deprecated, message: "Unused")
+  case invalidData
+  @available(*, deprecated, message: "Unused")
+  case animationNotAvailable
+}
+final public class SizeValueProvider {
+  public init(block: @escaping ICSdkEKYCHDSaison.SizeValueProvider.SizeValueBlock)
+  public init(_ size: CoreFoundation.CGSize)
+  public typealias SizeValueBlock = (CoreFoundation.CGFloat) -> CoreFoundation.CGSize
+  final public var size: CoreFoundation.CGSize {
+    get
+    set
+  }
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public var storage: ICSdkEKYCHDSaison.ValueProviderStorage<ICSdkEKYCHDSaison.LottieVector3D> {
+    get
+  }
+  final public func hasUpdate(frame _: CoreFoundation.CGFloat) -> Swift.Bool
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.SizeValueProvider : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.SizeValueProvider, rhs: ICSdkEKYCHDSaison.SizeValueProvider) -> Swift.Bool
+}
+final public class GradientValueProvider {
+  public init(block: @escaping ICSdkEKYCHDSaison.GradientValueProvider.ColorsValueBlock, locations: ICSdkEKYCHDSaison.GradientValueProvider.ColorLocationsBlock? = nil)
+  public init(_ colors: [ICSdkEKYCHDSaison.LottieColor], locations: [Swift.Double] = [])
+  public typealias ColorsValueBlock = (CoreFoundation.CGFloat) -> [ICSdkEKYCHDSaison.LottieColor]
+  public typealias ColorLocationsBlock = (CoreFoundation.CGFloat) -> [Swift.Double]
+  final public var colors: [ICSdkEKYCHDSaison.LottieColor] {
+    get
+    set
+  }
+  final public var locations: [Swift.Double] {
+    get
+    set
+  }
+  final public var valueType: any Any.Type {
+    get
+  }
+  final public var storage: ICSdkEKYCHDSaison.ValueProviderStorage<[Swift.Double]> {
+    get
+  }
+  final public func hasUpdate(frame _: CoreFoundation.CGFloat) -> Swift.Bool
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.GradientValueProvider : Swift.Equatable {
+  public static func == (lhs: ICSdkEKYCHDSaison.GradientValueProvider, rhs: ICSdkEKYCHDSaison.GradientValueProvider) -> Swift.Bool
+}
+extension UIKit.UITapGestureRecognizer {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func didTapGestureRecognizerAttributedTextInLabel(label: UIKit.UILabel, inRange targetRange: Foundation.NSRange) -> Swift.Bool
+}
+public struct LottieConfiguration : Swift.Hashable {
+  public init(renderingEngine: ICSdkEKYCHDSaison.RenderingEngineOption = .automatic, decodingStrategy: ICSdkEKYCHDSaison.DecodingStrategy = .dictionaryBased, colorSpace: CoreGraphics.CGColorSpace = CGColorSpaceCreateDeviceRGB(), reducedMotionOption: ICSdkEKYCHDSaison.ReducedMotionOption = .systemReducedMotionToggle)
+  public static var shared: ICSdkEKYCHDSaison.LottieConfiguration
+  public var renderingEngine: ICSdkEKYCHDSaison.RenderingEngineOption
+  public var decodingStrategy: ICSdkEKYCHDSaison.DecodingStrategy
+  public var reducedMotionOption: ICSdkEKYCHDSaison.ReducedMotionOption
+  public var colorSpace: CoreGraphics.CGColorSpace
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ICSdkEKYCHDSaison.LottieConfiguration, b: ICSdkEKYCHDSaison.LottieConfiguration) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol AnimationCacheProvider : AnyObject, Swift.Sendable {
+  func animation(forKey: Swift.String) -> ICSdkEKYCHDSaison.LottieAnimation?
+  func setAnimation(_ animation: ICSdkEKYCHDSaison.LottieAnimation, forKey: Swift.String)
+  func clearCache()
+}
+@_inheritsConvenienceInitializers @available(iOS 13.0, tvOS 13.0, *)
+@_Concurrency.MainActor(unsafe) open class EpoxySwiftUIHostingController<Content> : SwiftUI.UIHostingController<Content> where Content : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) override public init(rootView: Content)
+  @_Concurrency.MainActor(unsafe) override public init?(coder aDecoder: Foundation.NSCoder, rootView: Content)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ICSdkEKYCHDSaison.AnimatedSwitch.CancelBehavior : Swift.Equatable {}
+extension ICSdkEKYCHDSaison.AnimatedSwitch.CancelBehavior : Swift.Hashable {}
+extension ICSdkEKYCHDSaison.LottieBackgroundBehavior : Swift.Equatable {}
+extension ICSdkEKYCHDSaison.LottieBackgroundBehavior : Swift.Hashable {}
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+extension ICSdkEKYCHDSaison.LottieButton : SwiftUI.View {}
+extension ICSdkEKYCHDSaison.CompatibleRenderingEngineOption : Swift.Equatable {}
+extension ICSdkEKYCHDSaison.CompatibleRenderingEngineOption : Swift.Hashable {}
+extension ICSdkEKYCHDSaison.CompatibleRenderingEngineOption : Swift.RawRepresentable {}
+extension ICSdkEKYCHDSaison.CompatibleBackgroundBehavior : Swift.Equatable {}
+extension ICSdkEKYCHDSaison.CompatibleBackgroundBehavior : Swift.Hashable {}
+extension ICSdkEKYCHDSaison.CompatibleBackgroundBehavior : Swift.RawRepresentable {}
+extension ICSdkEKYCHDSaison.ColorValueProvider : ICSdkEKYCHDSaison.AnyValueProvider {}
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+extension ICSdkEKYCHDSaison.LottieView : SwiftUI.View {}
+extension ICSdkEKYCHDSaison.PointValueProvider : ICSdkEKYCHDSaison.AnyValueProvider {}
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+extension ICSdkEKYCHDSaison.LottieSwitch : SwiftUI.View {}
+extension ICSdkEKYCHDSaison.FloatValueProvider : ICSdkEKYCHDSaison.AnyValueProvider {}
+extension ICSdkEKYCHDSaison.LayerType : Swift.Equatable {}
+extension ICSdkEKYCHDSaison.LayerType : Swift.Hashable {}
+extension ICSdkEKYCHDSaison.LayerType : Swift.RawRepresentable {}
+extension ICSdkEKYCHDSaison.MatteType : Swift.Equatable {}
+extension ICSdkEKYCHDSaison.MatteType : Swift.Hashable {}
+extension ICSdkEKYCHDSaison.MatteType : Swift.RawRepresentable {}
+extension ICSdkEKYCHDSaison.BlendMode : Swift.Equatable {}
+extension ICSdkEKYCHDSaison.BlendMode : Swift.Hashable {}
+extension ICSdkEKYCHDSaison.BlendMode : Swift.RawRepresentable {}
+extension ICSdkEKYCHDSaison.ParallelMergeAlignment : Swift.Equatable {}
+extension ICSdkEKYCHDSaison.ParallelMergeAlignment : Swift.Hashable {}
+extension ICSdkEKYCHDSaison.ParallelMergeAlignment : Swift.RawRepresentable {}
+extension ICSdkEKYCHDSaison.CoordinateSpace : Swift.Equatable {}
+extension ICSdkEKYCHDSaison.CoordinateSpace : Swift.Hashable {}
+extension ICSdkEKYCHDSaison.CoordinateSpace : Swift.RawRepresentable {}
+extension ICSdkEKYCHDSaison.SizeValueProvider : ICSdkEKYCHDSaison.AnyValueProvider {}
+extension ICSdkEKYCHDSaison.GradientValueProvider : ICSdkEKYCHDSaison.AnyValueProvider {}

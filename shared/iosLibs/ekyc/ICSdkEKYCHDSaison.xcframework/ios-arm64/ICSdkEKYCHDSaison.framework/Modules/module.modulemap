@@ -1,0 +1,11 @@
+framework module ICSdkEKYCHDSaison {
+  umbrella header "ICSdkEKYCHDSaison.h"
+
+  export *
+  module * { export * }
+}
+
+module ICSdkEKYCHDSaison.Swift {
+  header "ICSdkEKYCHDSaison-Swift.h"
+  requires objc
+}

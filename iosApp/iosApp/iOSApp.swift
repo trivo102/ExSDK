@@ -1,11 +1,11 @@
-import Shared
+import ExSdk
 import SwiftUI
 
 @main
 struct iOSApp: App {
     
     init() {
-        KoinKt.doInitKoin()
+        ExSdk.initialize()
     }
     
     var body: some Scene {

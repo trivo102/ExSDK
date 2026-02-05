@@ -1,0 +1,20 @@
+package com.exam.exsdk.exsdk.ekyc
+
+import android.app.Activity
+import android.content.Intent
+import com.vnptit.idg.sdk.activity.VnptOcrActivity
+import com.vnptit.idg.sdk.utils.KeyIntentConstants.ACCESS_TOKEN
+import com.vnptit.idg.sdk.utils.KeyIntentConstants.TOKEN_ID
+import com.vnptit.idg.sdk.utils.KeyIntentConstants.TOKEN_KEY
+
+actual fun startEkyc(controller: Activity, onResult: (String?) -> Unit) {
+    val tokenId = "49482780-d356-6b15-e063-63199f0a34db"
+    val accessToken = "bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2FjdGlvbl9pZCI6IjE4MjMwYTczLTlmMDItNDdkZC1hNTYyLTkxZjNhOGU3NmYzNSIsInN1YiI6IjllNTY5NGY4LWZhOTktMTFmMC1hOWIwLTIxNjhmYTVhYjYwNyIsImF1ZCI6WyJyZXN0c2VydmljZSJdLCJ1c2VyX25hbWUiOiJ2by5taW5oLXRyaTFAaGRzYWlzb24uY29tLnZuIiwic2NvcGUiOlsicmVhZCJdLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdCIsIm5hbWUiOiJ2by5taW5oLXRyaTFAaGRzYWlzb24uY29tLnZuIiwiZXhwIjoxNzY5NTA2MjE0LCJ1dWlkX2FjY291bnQiOiI5ZTU2OTRmOC1mYTk5LTExZjAtYTliMC0yMTY4ZmE1YWI2MDciLCJhdXRob3JpdGllcyI6WyJVU0VSIl0sImp0aSI6ImUwZWU3NTE2LTVjZmYtNDcxNi05OTA1LTE0Nzc1M2M5NzEyYSIsImNsaWVudF9pZCI6ImNsaWVudGFwcCJ9.XwzUOco9vtAmQvKe-fh8dOrBEbFrCugSYuMhXptDlnkaxLamYgK4YHGPEJk84ZyiXkxIJkx1bwZ9YV38GSzbFpSF0E789HbLNOwvGtL9rlE0gcvei4flLE5ZNxqiKveW2yO2SmRkqZlInvgwjJpVVWrEEeWEkRZbAGEIb1AHsRyNg-yi50WWK6KeFuPe9m328U6k4uyRl_0Yf6ePLZdK6pTW5zB6GqIqf4jjo2CAf7Shz6dBL4rwnw6sWdfvTuE52pn3jIRz0Qu_AgQdFI0972XwlSj7xu5xGD0oI2RFA1vknaMiuYwAFADKlFgAqpfLfCeFpbKpddtxwzdAPwhyKw"
+    val tokenKey = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMwUksxGcnQzLhRO/eZZBfClUfoagd8fTMQaYnw+zZBUenww2sjIAruoozeN7eVIOtkeaaPtBIROKMooExQle/kCAwEAAQ=="
+
+    val intent = Intent(controller, VnptOcrActivity::class.java)
+    intent.putExtra(ACCESS_TOKEN, accessToken);
+    intent.putExtra(TOKEN_ID, tokenId);
+    intent.putExtra(TOKEN_KEY, tokenKey);
+    controller.startActivityForResult(intent, 1)
+}

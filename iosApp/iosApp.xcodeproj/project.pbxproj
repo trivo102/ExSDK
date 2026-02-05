@@ -6,6 +6,25 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		11BA3E6D2F3242B9002098B1 /* ExSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 11BA3E6C2F3242B9002098B1 /* ExSdk */; };
+		11BA3E6E2F3242B9002098B1 /* ExSdk in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 11BA3E6C2F3242B9002098B1 /* ExSdk */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		11BA3E6F2F3242B9002098B1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				11BA3E6E2F3242B9002098B1 /* ExSdk in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E32501244148042343BC181C /* exsdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exsdk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -41,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BA3E6D2F3242B9002098B1 /* ExSdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +95,7 @@
 				016CF1209ED578C7F199A8D7 /* Sources */,
 				CD020608B051E647402C4E5C /* Frameworks */,
 				75EAB54F10B0B3AFBFB5474C /* Resources */,
+				11BA3E6F2F3242B9002098B1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -85,6 +106,7 @@
 			);
 			name = iosApp;
 			packageProductDependencies = (
+				11BA3E6C2F3242B9002098B1 /* ExSdk */,
 			);
 			productName = iosApp;
 			productReference = E32501244148042343BC181C /* exsdk.app */;
@@ -114,6 +136,9 @@
 			);
 			mainGroup = 877CDF3AD1B53F9180FAB406;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				11BA3E6A2F3241A0002098B1 /* XCLocalSwiftPackageReference "ExSdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4A4B25871FF912F3286CCBB2 /* Products */;
 			projectDirPath = "";
@@ -179,10 +204,15 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "${TEAM_ID}";
+				DEVELOPMENT_TEAM = 5G5JFLPXKR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iosApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Ứng dụng sử dụng camera để quét mã QR, chụp ảnh xác minh danh tính và tải lên hồ sơ. Vui lòng cấp quyền để tiếp tục.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Kích hoạt Face ID cho phép bạn truy cập nhanh chóng và an toàn vào tài khoản của mình.\n";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Ứng dụng này cần truy cập micro để phát âm thanh.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Ứng dụng của chúng tôi cần được cấp phép để ghi ảnh";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Ứng dụng yêu cầu quyền truy cập hình ảnh. Được sử dụng quét mã QR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -338,10 +368,15 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "${TEAM_ID}";
+				DEVELOPMENT_TEAM = 5G5JFLPXKR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iosApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Ứng dụng sử dụng camera để quét mã QR, chụp ảnh xác minh danh tính và tải lên hồ sơ. Vui lòng cấp quyền để tiếp tục.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Kích hoạt Face ID cho phép bạn truy cập nhanh chóng và an toàn vào tài khoản của mình.\n";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Ứng dụng này cần truy cập micro để phát âm thanh.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Ứng dụng của chúng tôi cần được cấp phép để ghi ảnh";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Ứng dụng yêu cầu quyền truy cập hình ảnh. Được sử dụng quét mã QR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -384,6 +419,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		11BA3E6A2F3241A0002098B1 /* XCLocalSwiftPackageReference "ExSdk" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ExSdk;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11BA3E6C2F3242B9002098B1 /* ExSdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11BA3E6A2F3241A0002098B1 /* XCLocalSwiftPackageReference "ExSdk" */;
+			productName = ExSdk;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 357A3FFCD6E5F28CEE7656F3 /* Project object */;
 }

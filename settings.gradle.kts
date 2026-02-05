@@ -25,8 +25,14 @@ dependencyResolutionManagement {
             }
         }
         mavenCentral()
+        maven("https://jitpack.io")
+        // Local Maven repo for vendored AARs (required because AGP forbids file-based .aar deps when producing an AAR)
+        maven {
+            url = uri("$rootDir/build/maven-repo")
+        }
     }
 }
 
-include(":composeApp")
 include(":shared")
+include(":androidApp:ExSdk")
+include(":androidApp:app")

@@ -1,5 +1,6 @@
 package com.exam.exsdk.exsdk
 
+import android.app.Activity
 import android.os.Build
 
 class AndroidPlatform : Platform {
@@ -7,3 +8,5 @@ class AndroidPlatform : Platform {
 }
 
 actual fun getPlatform(): Platform = AndroidPlatform()
+
+actual typealias PlatformController = Activity

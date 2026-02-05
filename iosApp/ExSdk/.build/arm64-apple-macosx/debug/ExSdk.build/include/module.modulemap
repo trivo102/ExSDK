@@ -1,0 +1,3 @@
+module ExSdk {
+    header "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/include/ExSdk-Swift.h"
+}

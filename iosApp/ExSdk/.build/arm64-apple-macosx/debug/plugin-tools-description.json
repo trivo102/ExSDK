@@ -1,0 +1,289 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.ExSdk-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/sources",
+      "importPath" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/ExSdkConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/Utils.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ExSdk",
+      "moduleOutputPath" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/Modules/ExSdk.swiftmodule",
+      "objects" : [
+        "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/ContentView.swift.o",
+        "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/ExSdkConfig.swift.o",
+        "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/Utils.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j11",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/include/ExSdk-Swift.h",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "exsdk"
+      ],
+      "outputFileMapPath" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/ExSdkConfig.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/Utils.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/Modules/ExSdk.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/ContentView.swift",
+        "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/ExSdkConfig.swift",
+        "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/Utils.swift"
+      ],
+      "tempsPath" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "ExSdk" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "ExSdk",
+      "-package-name",
+      "exsdk",
+      "-c",
+      "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/ContentView.swift",
+      "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/ExSdkConfig.swift",
+      "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/Utils.swift",
+      "-I",
+      "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j11",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/include/ExSdk-Swift.h",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "exsdk",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "ExSdk" : [
+      "ExSdkCore"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/ExSdkConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/Sources/ExSdk/Utils.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/sources"
+    },
+    "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/ExSdkConfig.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.build/Utils.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/ExSdk.product/Objects.LinkFileList"
+    },
+    "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

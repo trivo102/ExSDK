@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/master.swiftdeps"
+  },
+  "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/Sources/ExSdkUI/ContentView.swift": {
+    "dependencies": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/ContentView.d",
+    "object": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/ContentView.swift.o",
+    "swiftmodule": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/ContentView.swiftdeps",
+    "diagnostics": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/ContentView.dia"
+  },
+  "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/Sources/ExSdkUI/Utils.swift": {
+    "dependencies": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/Utils.d",
+    "object": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/Utils.swift.o",
+    "swiftmodule": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/Utils~partial.swiftmodule",
+    "swift-dependencies": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/Utils.swiftdeps",
+    "diagnostics": "/Users/tri/Desktop/Ex_KMP/exsdk/iosApp/ExSdkUI/.build/x86_64-apple-macosx/debug/ExSdkUI.build/Utils.dia"
+  }
+}

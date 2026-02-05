@@ -37,4 +37,9 @@ in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and r
 
 ---
 
+## Documentation
+
+*   [Android Integration Guide](./INTEGRATION_GUIDE_ANDROID.md)
+*   [iOS Integration Guide](./INTEGRATION_GUIDE_IOS.md)
+
 Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…

@@ -1,0 +1,31 @@
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
+        "packageRef" : {
+          "identity" : "exsdk",
+          "kind" : "root",
+          "location" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk",
+          "name" : "ExSdk"
+        },
+        "path" : "/Users/vo.minh-tri1/Desktop/Ex_KMP/New_ExSDK/exsdk/iosApp/ExSdk/ExSdkCore.xcframework",
+        "source" : {
+          "type" : "local"
+        },
+        "targetName" : "ExSdkCore"
+      }
+    ],
+    "dependencies" : [
+
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}

@@ -69,9 +69,36 @@ EOF
 
 mkdir -p "$REPO_DIR"
 
-# Keep these coordinates stable (they become part of our published dependency graph).
-# You can change group/artifact IDs if you want, but then also update composeApp/build.gradle.kts.
+# 1. Publish Vendor AARs
+echo "Step 1: Publishing Vendor AARs..."
 publish_aar "com.hdsaison.ekyc" "ekyc_sdk_hdsaison" "1.2.2" "$VENDOR_DIR/ekyc_sdk_hdsaison-release-v1.2.2.aar"
 publish_aar "com.hdsaison.scanqr" "scanqr_ic_sdk" "1.0.6" "$VENDOR_DIR/scanqr_ic_sdk-release_v1.0.6.aar"
 
-echo "\nLocal Maven repo is ready at: $REPO_DIR"
+# 2. Publish Project AARs (ExSDK, ExSDKCore)
+echo "Step 2: Publishing Project AARs..."
+
+# Directory where build_android_aar.sh outputs the project AARs
+PROJECT_AARS_DIR="$PROJECT_DIR/build/AAROutput"
+
+# Define your project coordinates
+PROJECT_GROUP_ID="com.hdsaison.exsdk"
+PROJECT_VERSION="1.0.0"
+
+# Note: These paths depend on build_android_aar.sh output
+EXSDK_AAR="$PROJECT_AARS_DIR/ExSdk-release.aar"
+EXSDK_CORE_AAR="$PROJECT_AARS_DIR/ExSdkCore-release.aar"
+
+if [[ -f "$EXSDK_AAR" ]]; then
+    publish_aar "$PROJECT_GROUP_ID" "exsdk" "$PROJECT_VERSION" "$EXSDK_AAR"
+else
+    echo "⚠️  ExSdk AAR not found at $EXSDK_AAR. Did you run 'build_android_aar.sh'?"
+fi
+
+if [[ -f "$EXSDK_CORE_AAR" ]]; then
+    publish_aar "$PROJECT_GROUP_ID" "exsdk_core" "$PROJECT_VERSION" "$EXSDK_CORE_AAR"
+else
+    echo "⚠️  ExSdkCore AAR not found at $EXSDK_CORE_AAR. Did you run 'build_android_aar.sh'?"
+fi
+
+echo ""
+echo "Local Maven repo is ready at: $REPO_DIR"
